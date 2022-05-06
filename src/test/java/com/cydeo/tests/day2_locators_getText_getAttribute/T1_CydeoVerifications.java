@@ -19,15 +19,23 @@ public class T1_CydeoVerifications {
         driver.navigate().to("https://practice.cydeo.com");
 
         String expectedURL = "cydeo";
-
+        String expectedTitle = "Practice";
         String actualURL = driver.getCurrentUrl();
         String actualTitle = driver.getTitle();
+
+        if (actualTitle.equals(expectedTitle)) {
+            System.out.println("Title verification PASSED");
+        } else {
+            System.out.println("Title verification FAILED");
+        }
         System.out.println(actualURL);
         System.out.println(expectedURL);
-        if(actualURL.equals(expectedURL)){
-        System.out.println("URL verificatiob PASSED!");
+        if (actualURL.equals(expectedURL)) {
+            System.out.println("URL verificatiob PASSED!");
         } else {
             System.out.println("URL verification not Passed!");
         }
+
+        driver.close();
     }
 }
