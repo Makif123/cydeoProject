@@ -26,9 +26,9 @@ public class WebDriverFactory {
 
         } else if (browserType.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
-            FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("--no-sandbox");
-            return  new FirefoxDriver(options);
+//            FirefoxOptions options = new FirefoxOptions();
+//            options.addArguments("--no-sandbox");
+            return  new FirefoxDriver();
         }else {
             System.out.println("Given browser type does not exister/or is not currently supported");
             System.out.println("Driver = null");
@@ -39,7 +39,9 @@ public class WebDriverFactory {
 
     }
 
-
+    public static void main(String[] args) {
+        getDriver("firefox").navigate().to("https://google.com");
+    }
 
 
 }
