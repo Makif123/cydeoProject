@@ -27,8 +27,8 @@ public class T4_LibraryLoginPage {
         WebElement password = driver.findElement(By.id("inputPassword"));
         password.sendKeys("123kjasdn");
 
-        WebElement clickButton = driver.findElement(By.className("btn"));
-        clickButton.click();
+//        WebElement clickButton = driver.findElement(By.);
+//        clickButton.click();
 
     }
 }

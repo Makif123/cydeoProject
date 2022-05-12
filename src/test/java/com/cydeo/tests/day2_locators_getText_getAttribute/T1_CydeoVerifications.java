@@ -36,6 +36,6 @@ public class T1_CydeoVerifications {
             System.out.println("URL verification not Passed!");
         }
 
-        driver.close();
+
     }
 }
