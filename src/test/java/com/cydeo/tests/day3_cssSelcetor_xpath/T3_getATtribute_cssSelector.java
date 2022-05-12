@@ -22,6 +22,12 @@ public class T3_getATtribute_cssSelector {
 
         System.out.println(actualButtonText);
 
+        if (actualButtonText.equals(expectedButtonText)) {
+            System.out.println("Log in button text verification passed");
+        } else {
+            System.out.println("Log in button text verification failed");
+        }
+
     }
 
 
