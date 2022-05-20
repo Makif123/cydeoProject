@@ -16,7 +16,6 @@ public class WebDriverFactory {
     public static WebDriver getDriver(String browserType) {
 
 
-
         if (browserType.equalsIgnoreCase("chrome")) {
 
             WebDriverManager.chromedriver().setup();
@@ -28,21 +27,15 @@ public class WebDriverFactory {
             WebDriverManager.firefoxdriver().setup();
 //            FirefoxOptions options = new FirefoxOptions();
 //            options.addArguments("--no-sandbox");
-            return  new FirefoxDriver();
-        }else {
+            return new FirefoxDriver();
+        } else {
             System.out.println("Given browser type does not exister/or is not currently supported");
             System.out.println("Driver = null");
             return null;
         }
 
 
-
     }
-
-    public static void main(String[] args) {
-        getDriver("firefox").navigate().to("https://google.com");
-    }
-
 
 }
 
