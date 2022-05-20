@@ -14,11 +14,21 @@ public class T4_findElements {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        List<WebElement> allLinks = driver.findElements(By.tagName("a"));
         driver.navigate().to("https://practice.cydeo.com/abtest");
-        WebElement HomeLink = driver.findElement(By.xpath("//a[@class='nav-link']"));
-        WebElement CydeoLink = driver.findElement(By.xpath("//a[@class='nav-link']"));
+        List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+
+        System.out.println(allLinks.size());
+
+
+            for (WebElement each : allLinks) {
+                System.out.println("each = " + each.getText());
+                System.out.println("each.getAttribute(\"href\") = " + each.getAttribute("href"));
+
+
+            }
+        }
+
 
 
     }
-}
+
