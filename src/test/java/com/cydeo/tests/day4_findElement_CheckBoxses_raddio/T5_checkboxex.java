@@ -23,8 +23,10 @@ public class T5_checkboxex {
         checkboxes1.click();
 
         checkboxes2.click();
-//
-//        System.out.println("checkboxes1.isSelected() = " + checkboxes1.isSelected());
+
+
+        System.out.println("checkboxes1.isSelected(), expecting true = " + checkboxes1.isSelected());
+        System.out.println("checkboxes1.isSelected(), expecting false  = " + checkboxes2.isSelected());
 
 
     }
