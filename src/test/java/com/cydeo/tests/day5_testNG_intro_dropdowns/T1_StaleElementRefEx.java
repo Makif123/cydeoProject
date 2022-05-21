@@ -2,6 +2,7 @@ package com.cydeo.tests.day5_testNG_intro_dropdowns;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class T1_StaleElementRefEx {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
@@ -23,8 +24,25 @@ public class T1_StaleElementRefEx {
 
         WebElement addElement = driver.findElement(By.xpath("//button[@onclick='addElement()']"));
         addElement.click();
+
+        Thread.sleep(2000);
         WebElement deleteElement = driver.findElement(By.xpath("//button[@onclick='deleteElement()']"));
+
         System.out.println("deleteElement.isDisplayed() = " + deleteElement.isDisplayed());
+
+
+        deleteElement.click();
+try {
+
+    System.out.println("deleteElement.isDisplayed() = " + deleteElement.isDisplayed());
+
+}catch (StaleElementReferenceException e) {
+
+    System.out.println("lskdhfsdhfisahfishadifuahs");
+
+
+}
+
 
 
     }
