@@ -1,11 +1,20 @@
 package com.cydeo.tests.day5_testNG_intro_dropdowns;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestNG_Intro {
+
+
+    @BeforeClass
+    public void setUpClass() {
+        System.out.println(">>>>>>>>>>>>>>>>>> BeforeClass is running!");
+    }
+
+    @AfterClass
+    public void tearDownClass() {
+        System.out.println(">>>>>>> AfterClass is running!");
+    }
+
 
     @BeforeMethod
     public void setUpMethod() {
@@ -18,7 +27,7 @@ public class TestNG_Intro {
     }
 
 
-    @Test (priority = 0)
+    @Test(priority = 0)
     public void test1() {
         System.out.println("Test 1 is running ...");
 
