@@ -18,13 +18,13 @@ public class TestNG_Intro {
     }
 
 
-    @Test
+    @Test (priority = 0)
     public void test1() {
         System.out.println("Test 1 is running ...");
 
     }
 
-    @Test
+    @Test(priority = 1)
     public void test2() {
         System.out.println("Test 2 is running ...");
     }
