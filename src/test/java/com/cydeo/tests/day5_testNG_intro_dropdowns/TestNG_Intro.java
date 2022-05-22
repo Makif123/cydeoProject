@@ -35,6 +35,7 @@ public class TestNG_Intro {
 
         String actual = "apple";
         String expected = "apple1";
+
         Assert.assertEquals(actual, expected);
 
 
@@ -48,5 +49,10 @@ public class TestNG_Intro {
     @Test(priority = 1)
     public void test2() {
         System.out.println("Test 2 is running ...");
+
+        String actual = "apple";
+        String expected = "apple1";
+
+        Assert.assertTrue(actual.equals(expected));
     }
 }
