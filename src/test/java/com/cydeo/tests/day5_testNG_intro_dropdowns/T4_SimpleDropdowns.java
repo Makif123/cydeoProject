@@ -35,5 +35,14 @@ public class T4_SimpleDropdowns {
         String expextedSimpleDropDownText = "Please select an option";
 
         Assert.assertEquals(actualSimpleDropDownText, expextedSimpleDropDownText, "it's not matching");
+
+        Select selectStateDropdown = new Select(driver.findElement(By.xpath("//select[@id = 'state']")));
+        WebElement firstSelectedOption = selectStateDropdown.getFirstSelectedOption();
+        String actualOptionText = firstSelectedOption.getText();
+        String expectedSelectStateDropdownText = "Select a State";
+        Assert.assertEquals(actualOptionText,expectedSelectStateDropdownText,"It's something wrong");
+
+//        Assert.assertEquals(selectStateDropdown.getFirstSelectedOption().getText(),expectedSelectStateDropdownText);
+
     }
 }
