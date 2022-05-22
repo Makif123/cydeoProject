@@ -17,23 +17,28 @@ public class T3_RadioButton_cont {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://practice.cydeo.com/radio_buttons");
 
-        List<WebElement> supportRadioButtons = driver.findElements(By.name("sports"));
+clickAndVerifyRadioButton(driver,"sport","hockey");
 
-        for (WebElement each : supportRadioButtons) {
 
-           String eachId =  each.getAttribute("id");
+    }
 
-            System.out.println("eachId = " + eachId);
+    private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttribute, String idValue) {
+        List<WebElement> radioButtons = driver.findElements(By.name(nameAttribute));
 
-            if (eachId.equals("hockey")) {
+        for (WebElement each : radioButtons) {
+            String eachId = each.getAttribute("id");
+            if (eachId.equals(idValue)) {
                 each.click();
-                System.out.println("Hockey is selected : " + each.isSelected());
+                System.out.println(eachId + " is selected : " + each.isSelected());
                 break;
             }
         }
-
     }
+
+
 }
