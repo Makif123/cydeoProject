@@ -22,6 +22,6 @@ public class TestNG_Selenium {
         //Get "https://google.com"
         driver.get("https://google.com");
         //Assert: title is "Google"
-        Assert.assertEquals(driver.getTitle(),"Google");
+        Assert.assertEquals(driver.getTitle(),"Google","Tittle is not matching here.");
     }
 }
