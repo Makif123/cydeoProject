@@ -28,23 +28,6 @@ public class TestNG_Selenium {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public void
     @Test
     public void selenium_Test() {
 
