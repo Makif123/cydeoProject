@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
 public class T4_SimpleDropdowns {
@@ -40,9 +41,11 @@ public class T4_SimpleDropdowns {
         WebElement firstSelectedOption = selectStateDropdown.getFirstSelectedOption();
         String actualOptionText = firstSelectedOption.getText();
         String expectedSelectStateDropdownText = "Select a State";
-        Assert.assertEquals(actualOptionText,expectedSelectStateDropdownText,"It's something wrong");
-
+        Assert.assertEquals(actualOptionText, expectedSelectStateDropdownText, "It's something wrong");
 //        Assert.assertEquals(selectStateDropdown.getFirstSelectedOption().getText(),expectedSelectStateDropdownText);
+
+        System.out.println(driver.findElement(By.xpath("//a[@class='nav-link']")).getAttribute("href"));
+
 
     }
 }
