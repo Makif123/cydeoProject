@@ -4,6 +4,7 @@ import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -28,8 +29,11 @@ public class T4_Iframes {
 
         // Locate the p tag
         WebElement iframe = driver.findElement(By.tagName("iframe"));
-        driver.switchTo().frame(iframe);
+        driver.switchTo().frame("mce-0-ifr");
         WebElement yourContentGoesHereTExt = driver.findElement(By.xpath("//p"));
+        driver.switchTo().parentFrame();
+        Assert.assertTrue(yourContentGoesHereTExt.isDisplayed());
+
 
 
 
