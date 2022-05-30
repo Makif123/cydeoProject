@@ -29,11 +29,20 @@ public class T4_Iframes {
 
         // Locate the p tag
         WebElement iframe = driver.findElement(By.tagName("iframe"));
-        driver.switchTo().frame("mce-0-ifr");
+        driver.switchTo().frame("mce_0_ifr");
         WebElement yourContentGoesHereTExt = driver.findElement(By.xpath("//p"));
-        driver.switchTo().parentFrame();
+
         Assert.assertTrue(yourContentGoesHereTExt.isDisplayed());
 
+
+        //Verify An iFrame containing the TinyMCE WYSIWYG Editor
+        // To be able to verify the header we must switch back to main HTML
+
+
+        driver.switchTo().parentFrame();
+
+        WebElement headerText = driver.findElement(By.xpath("//h3"));
+        Assert.assertTrue(headerText.isDisplayed());
 
 
 
