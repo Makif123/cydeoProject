@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 public class DropDownPractices {
     WebDriver driver;
-//    Select selectDropdown = new Select(driver.findElement(By.xpath("//select[@id ='state']")));
+    //    Select selectDropdown = new Select(driver.findElement(By.xpath("//select[@id ='state']")));
     String expectedDropDown = "California";
 
     @BeforeMethod
@@ -30,7 +30,7 @@ public class DropDownPractices {
     }
 
     @Test
-    public void Test1()   {
+    public void Test1() {
         Select selectDropdown = new Select(driver.findElement(By.xpath("//select[@id ='state']")));
 
 //        Select simpleDropdown = new Select(driver.findElement(By.xpath("//select[@id = 'dropdown']")));
@@ -51,18 +51,27 @@ public class DropDownPractices {
     public void Test3() throws InterruptedException {
         Thread.sleep(1000);
         Select selectDropdown = new Select(driver.findElement(By.xpath("//select[@id ='state']")));
-       selectDropdown.selectByIndex(5);
-       String expectedOptionText = "California";
-       String actualOptionText = selectDropdown.getFirstSelectedOption().getText();
-        Assert.assertEquals(expectedOptionText,actualOptionText);
+        selectDropdown.selectByIndex(5);
+        String expectedOptionText = "California";
+        String actualOptionText = selectDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(expectedOptionText, actualOptionText);
 
 
     }
 
     @Test
-    public void Test6() {
+    public void Test6() throws InterruptedException {
 
-//        WebElement wrappedElement = selectDropdown.getWrappedElement();
+
+        Select year = new Select(driver.findElement(By.xpath("//select[@id = 'year']")));
+        Select month = new Select(driver.findElement(By.xpath("//select[@id = 'month']")));
+        Select day = new Select(driver.findElement(By.xpath("//select[@id = 'day']")));
+
+        year.selectByVisibleText("2020");
+        Thread.sleep(1000);
+        month.selectByVisibleText("May");
+        Thread.sleep(1000);
+        day.selectByVisibleText("30");
 
 
     }
