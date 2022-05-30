@@ -1,7 +1,9 @@
 package com.cydeo.tests.day6_alerts_iframes_windows;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,8 +24,12 @@ public class T4_Iframes {
 
 
     @Test
-    public void test_iframe() {
+    public void iframe_test() {
 
+        // Locate the p tag
+        WebElement iframe = driver.findElement(By.tagName("iframe"));
+        driver.switchTo().frame(iframe);
+        WebElement yourContentGoesHereTExt = driver.findElement(By.xpath("//p"));
 
 
 
