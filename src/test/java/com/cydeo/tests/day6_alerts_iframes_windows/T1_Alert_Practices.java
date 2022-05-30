@@ -47,23 +47,27 @@ public class T1_Alert_Practices {
     }
 
     @Test
-    public void alert_test2() {
+    public void alert_test2() throws InterruptedException {
 
         WebElement clickButton = driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")); // >>>>//button[.='Click for JS Alert'
         clickButton.click();
+        Thread.sleep(2000);
         Alert alert = driver.switchTo().alert();
+
         alert.dismiss();
 
 
     }
 
     @Test
-    public void alert_test3() {
+    public void alert_test3() throws InterruptedException {
 
         WebElement clickButton = driver.findElement(By.xpath("//button[text()='Click for JS Prompt']")); // >>>>//button[.='Click for JS Alert'
         clickButton.click();
+        Thread.sleep(2000);
         Alert alert = driver.switchTo().alert();
         alert.sendKeys("hello");
+        alert.accept();
 
 
     }
