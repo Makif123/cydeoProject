@@ -30,6 +30,8 @@ public class T4_Iframes {
         // Locate the p tag
         WebElement iframe = driver.findElement(By.tagName("iframe"));
         driver.switchTo().frame("mce_0_ifr");
+//  Options1      driver.switchTo().frame(0);
+//  Options2      driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']")));
         WebElement yourContentGoesHereTExt = driver.findElement(By.xpath("//p"));
 
         Assert.assertTrue(yourContentGoesHereTExt.isDisplayed());
@@ -43,7 +45,6 @@ public class T4_Iframes {
 
         WebElement headerText = driver.findElement(By.xpath("//h3"));
         Assert.assertTrue(headerText.isDisplayed());
-
 
 
     }
