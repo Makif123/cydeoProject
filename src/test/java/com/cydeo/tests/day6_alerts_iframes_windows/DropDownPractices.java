@@ -67,11 +67,22 @@ public class DropDownPractices {
         Select month = new Select(driver.findElement(By.xpath("//select[@id = 'month']")));
         Select day = new Select(driver.findElement(By.xpath("//select[@id = 'day']")));
 
-        year.selectByVisibleText("2020");
+        year.selectByVisibleText("1923");
         Thread.sleep(1000);
-        month.selectByVisibleText("May");
+        month.selectByValue("11");
         Thread.sleep(1000);
-        day.selectByVisibleText("30");
+        day.selectByIndex(0);
+
+        String expectedYear = "1923";
+        String expectedMonth = "December";
+        String expectedDay = "1";
+        String actualYear = year.getFirstSelectedOption().getText();
+        String actualMonth = month.getFirstSelectedOption().getText();
+        String actualday = day.getFirstSelectedOption().getText();
+
+        Assert.assertEquals(actualYear, expectedYear);
+        Assert.assertEquals(actualMonth, expectedMonth);
+        Assert.assertEquals(actualday, expectedDay);
 
 
     }
