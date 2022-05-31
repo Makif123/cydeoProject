@@ -1,5 +1,6 @@
 package com.cydeo.tests.day7;
 
+import com.cydeo.utilities.BrowserUtilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -37,6 +38,7 @@ public class T3_CRM_LOGIN {
         userName.sendKeys("helpdesk1@cybertekschool.com");
         userPassword.sendKeys("UserUser");
         loginButton.click();
+        BrowserUtilities.verifyTitle(driver,"Portal");
 
     }
 }
