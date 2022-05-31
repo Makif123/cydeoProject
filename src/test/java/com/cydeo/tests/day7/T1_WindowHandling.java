@@ -1,10 +1,12 @@
 package com.cydeo.tests.day7;
 
+import com.cydeo.utilities.BrowserUtilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -29,6 +31,8 @@ public class T1_WindowHandling {
 
     }
 
+
+
     @Test
     public void test() {
         driver.get("https://amazon.com");
@@ -42,14 +46,19 @@ public class T1_WindowHandling {
 //        }
         Set<String> allWindowsHandle = driver.getWindowHandles();
         for (String each : allWindowsHandle) {
-           driver.switchTo().window(each);
-        }
+            driver.switchTo().window(each);
 
-//        LinkedList<String> listOfWindow = new LinkedList<>();
-//        for (String windowHandle : driver.getWindowHandles()) {
-//            listOfWindow.add(windowHandle);
-//            System.out.println("windowHandle = " + windowHandle);
-//        }
+            System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
+            if (driver.getCurrentUrl().contains("etsy")) {
+                break;
+            }
+
+        }
+        String actualTitle = driver.getTitle();
+        System.out.println("actualTitle = " + actualTitle);
+        String expectedInTitle = "Etsy";
+//        Assert.assertEquals(actualTitle,expectedInTitle);
+        Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
     }
 
