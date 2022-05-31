@@ -1,6 +1,7 @@
 package com.cydeo.tests.day7;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -24,12 +25,20 @@ public class T1_WindowHandling {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://amazon.com");
+
 
     }
 
     @Test
     public void test() {
+        driver.get("https://amazon.com");
+
+        ((JavascriptExecutor) driver).executeScript("window.open('https://google.com','_blank');");
+        ((JavascriptExecutor) driver).executeScript("window.open('https://etsy.com','_blank');");
+        ((JavascriptExecutor) driver).executeScript("window.open('https://facebook.com','_blank');");
+
+
+
         LinkedList<String> listOfWindow = new LinkedList<>();
         for (String windowHandle : driver.getWindowHandles()) {
             listOfWindow.add(windowHandle);
@@ -38,8 +47,9 @@ public class T1_WindowHandling {
 
     }
 
-    @AfterMethod
-    public void close() {
-        driver.close();
-    }
+//    @AfterMethod
+//    public void close() {
+//        driver.close();
+//        driver.switchTo().window();
+//    }
 }
