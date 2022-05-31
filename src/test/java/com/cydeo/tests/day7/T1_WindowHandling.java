@@ -37,13 +37,19 @@ public class T1_WindowHandling {
         ((JavascriptExecutor) driver).executeScript("window.open('https://etsy.com','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('https://facebook.com','_blank');");
 
-
-
-        LinkedList<String> listOfWindow = new LinkedList<>();
-        for (String windowHandle : driver.getWindowHandles()) {
-            listOfWindow.add(windowHandle);
-            System.out.println("windowHandle = " + windowHandle);
+//        for (String each : driver.getWindowHandles()) {
+//
+//        }
+        Set<String> allWindowsHandle = driver.getWindowHandles();
+        for (String each : allWindowsHandle) {
+           driver.switchTo().window(each);
         }
+
+//        LinkedList<String> listOfWindow = new LinkedList<>();
+//        for (String windowHandle : driver.getWindowHandles()) {
+//            listOfWindow.add(windowHandle);
+//            System.out.println("windowHandle = " + windowHandle);
+//        }
 
     }
 
