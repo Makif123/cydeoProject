@@ -1,6 +1,7 @@
 package com.cydeo.tests.day7;
 
 import com.cydeo.utilities.BrowserUtilities;
+import com.cydeo.utilities.CRM_Utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -30,15 +31,8 @@ public class T3_CRM_LOGIN {
 
     @Test
     public void crm_login_test() {
-        driver.get("https://login1.nextbasecrm.com/");
-        WebElement userName = driver.findElement(By.xpath("//input[@name = 'USER_LOGIN']"));
-        WebElement userPassword = driver.findElement(By.xpath("//input[@name = 'USER_PASSWORD']"));
-        WebElement loginButton = driver.findElement(By.xpath("//input[@class='login-btn']"));
-
-        userName.sendKeys("helpdesk1@cybertekschool.com");
-        userPassword.sendKeys("UserUser");
-        loginButton.click();
-        BrowserUtilities.verifyTitle(driver,"Portal");
+        CRM_Utilities.crm_login(driver);
+        BrowserUtilities.verifyTitle(driver, "Portal");
 
     }
 }

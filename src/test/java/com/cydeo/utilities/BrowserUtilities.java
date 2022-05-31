@@ -36,4 +36,6 @@ public class BrowserUtilities {
     public static void verifyTitle(WebDriver driver, String expectedTitle) {
         Assert.assertEquals(driver.getTitle(), expectedTitle);
     }
+
+
 }
