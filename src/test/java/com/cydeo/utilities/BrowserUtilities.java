@@ -17,7 +17,6 @@ public class BrowserUtilities {
 
     }
 
-
     public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl, String expectedInTitle) {
 
         Set<String> allWindowsHandle = driver.getWindowHandles();
@@ -34,4 +33,7 @@ public class BrowserUtilities {
 
     }
 
+    public static void verifyTitle(WebDriver driver, String expectedTitle) {
+        Assert.assertEquals(driver.getTitle(), expectedTitle);
+    }
 }

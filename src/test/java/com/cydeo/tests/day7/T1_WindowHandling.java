@@ -40,25 +40,10 @@ public class T1_WindowHandling {
         ((JavascriptExecutor) driver).executeScript("window.open('https://google.com','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('https://etsy.com','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('https://facebook.com','_blank');");
-
 //        for (String each : driver.getWindowHandles()) {
 //
 //        }
-        Set<String> allWindowsHandle = driver.getWindowHandles();
-        for (String each : allWindowsHandle) {
-            driver.switchTo().window(each);
-
-            System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
-            if (driver.getCurrentUrl().contains("etsy")) {
-                break;
-            }
-
-        }
-        String actualTitle = driver.getTitle();
-        System.out.println("actualTitle = " + actualTitle);
-        String expectedInTitle = "Etsy";
-//        Assert.assertEquals(actualTitle,expectedInTitle);
-        Assert.assertTrue(actualTitle.contains(expectedInTitle));
+        BrowserUtilities.switchWindowAndVerify(driver, "etsy", "Etsy");
 
     }
 
