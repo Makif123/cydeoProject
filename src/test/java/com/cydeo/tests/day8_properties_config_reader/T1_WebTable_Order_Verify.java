@@ -26,6 +26,13 @@ public class T1_WebTable_Order_Verify {
     public void order_name_verify_test() {
         //2. Verify Bob's name is listed as expected.
         System.out.println(WebTableUtilities.returnOrderDate(driver, "Bob Martin"));
+        System.out.println(WebTableUtilities.returnOrderDate(driver, "John Doe"));
+
+    }
+
+    @Test
+    public void test3() {
+        WebTableUtilities.orderVerify(driver, "John Doe", "01/08/2021");
 
 
     }
