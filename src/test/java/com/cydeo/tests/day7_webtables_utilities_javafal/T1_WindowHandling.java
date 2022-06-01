@@ -1,4 +1,4 @@
-package com.cydeo.tests.day7;
+package com.cydeo.tests.day7_webtables_utilities_javafal;
 
 import com.cydeo.utilities.BrowserUtilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -6,13 +6,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.LinkedList;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class T1_WindowHandling {
