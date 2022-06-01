@@ -27,13 +27,6 @@ public class T1_WebTable_Order_Verify {
         //2. Verify Bob's name is listed as expected.
         System.out.println(WebTableUtilities.returnOrderDate(driver, "Bob Martin"));
 
-        WebElement BobsDate = driver.findElement(By.xpath("//table[@class='SampleTable']//td[.='Bob Martin']/..//td[5]"));
-
-        String expectedDate = "12/31/2021";
-        Assert.assertEquals(actualText, expectedText);
-        Assert.assertEquals(actualDate, expectedDate);
-
-        System.out.println(WebTableUtilities.returnOrderDate(driver, "Bob Martin"));
 
     }
 }
