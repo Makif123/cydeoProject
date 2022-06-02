@@ -11,6 +11,9 @@ public class T4_getATtribute_cssSelector_getText {
         driver.manage().window().maximize();
 
         driver.navigate().to("https://login1.nextbasecrm.com/?forgot_password=yes");
+
+
+
         String expectedPassword = "Reset password";
         WebElement ResetPassword = driver.findElement(By.cssSelector("button[value ='Reset password']"));
 
