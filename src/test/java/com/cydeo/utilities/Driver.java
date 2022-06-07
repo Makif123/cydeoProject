@@ -47,7 +47,7 @@ switch statement will determine the case, and open the browser.
                     driver = new ChromeDriver(options);
                     driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            break;
+                    break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     FirefoxOptions options1 = new FirefoxOptions();
@@ -60,5 +60,12 @@ switch statement will determine the case, and open the browser.
             }
         }
         return driver;
+    }
+
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.close();
+            driver = null;
+        }
     }
 }
