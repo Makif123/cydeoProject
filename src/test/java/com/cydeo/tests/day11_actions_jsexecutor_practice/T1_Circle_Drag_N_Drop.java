@@ -6,6 +6,7 @@ import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class T1_Circle_Drag_N_Drop {
@@ -25,9 +26,19 @@ public class T1_Circle_Drag_N_Drop {
 //        actions.dragAndDrop(draggable,dropTarget).perform();
 
         actions.clickAndHold(draggable).
-                pause(2000).moveToElement(dropTarget).
-                pause(2000).release().perform();
-        BrowserUtilities.sleep(3);
-        Driver.closeDriver();
+                pause(5000).moveToElement(dropTarget).
+                pause(5000).release().perform();
+
+
+
+//        Driver.closeDriver();
+
+
+       String actualBigCircleText  = dropTarget.getText();
+        String expectedBigCircleText = "You did great!";
+
+        Assert.assertEquals(actualBigCircleText,expectedBigCircleText);
     }
+
+
 }
